@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orringston Andrado | Materials & Nano Science Engineer Technology </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5% 80px;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-greeting {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-location {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-color);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Education Section */
+        .education-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .education-item:hover {
+            border-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .education-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .education-year {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .education-school {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .education-details ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .education-details li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .education-details li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        /* Industrial Training Section */
+        .training-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .training-card:hover {
+            border-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .training-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .training-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .training-company {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .training-location {
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+
+        .project-year {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-course {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .project-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            background: var(--dark-bg);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .expertise-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Volunteer & Memberships */
+        .volunteer-card, .membership-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .volunteer-card h3, .membership-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .membership-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .membership-item {
+            background: var(--dark-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .membership-item i {
+            color: var(--accent-color);
+        }
+
+        /* Certifications */
+        .certifications-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .certification-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .certification-item:hover {
+            border-color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .certification-item i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+            background: var(--dark-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a, .contact-item p {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 1.2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about, .contact {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Orringston Andrado</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#training">Training</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-greeting">
+                <i class="fas fa-hand-wave"></i>
+                <span>Hello, I'm</span>
+            </div>
+            <h1>Orringston Andrado</h1>
+            <p class="hero-title">Materials & Nano Science Engineer Technology </p>
+            <p class="hero-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Kalmunai, Ampara, Sri Lanka
+            </p>
+            <div class="hero-buttons">
+                <a href="mailto:reeforringston@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Hire Me
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-paper-plane"></i>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about">
+            <div class="about-content">
+                <p>
+                    As a highly motivated and ambitious graduate with a three-year background in Materials and Nano Science Technology, 
+                    I have honed my expertise in analytical thinking, data analysis, and laboratory techniques for material characterization. 
+                    I am currently seeking opportunities to apply my skills in a dynamic and innovative research or industrial environment. 
+                    My comprehensive understanding of research domains and methodologies, coupled with my enthusiasm for undertaking a 
+                    diverse range of studies, is complemented by my diligent, industrious, and meticulous approach to uncovering insights 
+                    within the field of research.
+                </p>
+            </div>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Years of Study</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Major Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">District Rank</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">601</div>
+                    <div class="stat-label">Island Rank</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="education-item">
+            <div class="education-header">
+                <h3 class="education-title">Bachelor of Engineering Technology (Hons) in Material and Nano Science Technology</h3>
+                <span class="education-year">2022 - Present</span>
+            </div>
+            <p class="education-school">
+                <i class="fas fa-university"></i> Wayamba University of Sri Lanka, Kuliyapitiya, Kurunegala
+            </p>
+            <div class="education-details">
+                <ul>
+                    <li>Faculty of Technology</li>
+                    <li>Department of Nano Science Technology</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="education-item">
+            <div class="education-header">
+                <h3 class="education-title">G.C.E Advanced Level - Technology Stream</h3>
+                <span class="education-year">2017 - 2020</span>
+            </div>
+            <p class="education-school">
+                <i class="fas fa-school"></i> Km/Carmel Fatima College National School, Kalmunai, Ampara
+            </p>
+            <div class="education-details">
+                <ul>
+                    <li>Results: A B C</li>
+                    <li>Z-Score: 1.8006</li>
+                    <li>District Rank: 12 (Ampara)</li>
+                    <li>Island Rank: 601</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industrial Training Section -->
+    <section id="training">
+        <h2 class="section-title">Industrial Training</h2>
+        
+        <div class="training-card">
+            <div class="training-header">
+                <div>
+                    <h3 class="training-title">Industrial Trainee</h3>
+                    <p class="training-company">Lanka Mineral Sands Limited</p>
+                </div>
+            </div>
+            <p class="training-location">
+                <i class="fas fa-map-marker-alt"></i>
+                Pulmoddai, Eastern Province, Sri Lanka
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Smart Dustbin</h3>
+                    <span class="project-year">2022</span>
+                </div>
+                <p class="project-course">ENAC 1†X0 – Mini Project (2020/2021)</p>
+                <p class="project-description">
+                    Designed and implemented an automated waste management system using sensors (ultrasonic/IR), 
+                    Arduino/Raspberry Pi, and servo motors for hands-free operation. Integrated real-time garbage 
+                    level detection with notifications (via IoT/SMS/LED indicators) for timely disposal.
+                </p>
+                <div class="project-skills">
+                    <span class="skill-tag">Arduino</span>
+                    <span class="skill-tag">Raspberry Pi</span>
+                    <span class="skill-tag">IoT</span>
+                    <span class="skill-tag">Sensors</span>
+                    <span class="skill-tag">Automation</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">AutoCAD Design Project</h3>
+                    <span class="project-year">2023</span>
+                </div>
+                <p class="project-course">NANO 2162 Engineering Design and Drawing</p>
+                <p class="project-description">
+                    Created a detailed 2D and 3D design of a perfume bottle box inspired by the architectural 
+                    shape of the Taj Mahal, combining aesthetics with functional packaging design. The project 
+                    emphasized accuracy in technical drawing, creative modeling, and visual presentation.
+                </p>
+                <div class="project-skills">
+                    <span class="skill-tag">AutoCAD</span>
+                    <span class="skill-tag">2D Drafting</span>
+                    <span class="skill-tag">3D Modeling</span>
+                    <span class="skill-tag">Design Thinking</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Nanoscience Awareness Research</h3>
+                    <span class="project-year">2024</span>
+                </div>
+                <p class="project-course">NANO 3152 Marketing Management</p>
+                <p class="project-description">
+                    Conducted a research study to assess the level of awareness and understanding of nanoscience 
+                    and nanotechnology among Advanced Level Technology stream students. Involved designing 
+                    questionnaires, collecting data from multiple schools, and analyzing student perception.
+                </p>
+                <div class="project-skills">
+                    <span class="skill-tag">SPSS</span>
+                    <span class="skill-tag">Research Design</span>
+                    <span class="skill-tag">Statistical Analysis</span>
+                    <span class="skill-tag">Data Collection</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">RePen Light</h3>
+                    <span class="project-year">2025</span>
+                </div>
+                <p class="project-course">NANO 3232 Small Business Management</p>
+                <p class="project-description">
+                    Co-developed RePen Light, an eco-friendly, modular LED desk lamp designed using repurposed 
+                    pen barrels and recycled components. The project focused on sustainable product innovation, 
+                    cost-effectiveness, and aesthetic design, aiming to reduce plastic waste.
+                </p>
+                <div class="project-skills">
+                    <span class="skill-tag">Product Design</span>
+                    <span class="skill-tag">Sustainability</span>
+                    <span class="skill-tag">Budgeting</span>
+                    <span class="skill-tag">Branding</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Skills & Expertise</h2>
+        
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming & Software</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">C++</div>
+                    <div class="skill-item">C Programming</div>
+                    <div class="skill-item">HTML</div>
+                    <div class="skill-item">MySQL</div>
+                    <div class="skill-item">SPSS</div>
+                    <div class="skill-item">AutoCAD</div>
+                    <div class="skill-item">Microsoft Office</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-flask"></i> Laboratory Techniques</h3>
+                <div class="skill-list">
+                    <div class="skill-item">XRD</div>
+                    <div class="skill-item">UV-VIS</div>
+                    <div class="skill-item">FTIR</div>
+                    <div class="skill-item">AAS</div>
+                    <div class="skill-item">PSA</div>
+                    <div class="skill-item">Material Characterization</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-brain"></i> Interpersonal Skills</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Critical Thinking</div>
+                    <div class="skill-item">Problem Solving</div>
+                    <div class="skill-item">Communication</div>
+                    <div class="skill-item">Time Management</div>
+                    <div class="skill-item">Task Planning</div>
+                    <div class="skill-item">Adaptability</div>
+                    <div class="skill-item">Team Collaboration</div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fas fa-microscope"></i> Areas of Expertise</h3>
+                <div class="skill-list">
+                    <div class="skill-item">Materials Science</div>
+                    <div class="skill-item">Nanotechnology</div>
+                    <div class="skill-item">Data Analysis</div>
+                    <div class="skill-item">Research Methodologies</div>
+                    <div class="skill-item">Data Interpretation</div>
+                    <div class="skill-item">Biotechnology</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="expertise-grid">
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <h3>Materials & Nano Science</h3>
+                <p>Advanced knowledge in material characterization and nanotechnology applications</p>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Analytical Thinking</h3>
+                <p>Strong data analysis and interpretation skills with statistical expertise</p>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <h3>Laboratory Techniques</h3>
+                <p>Proficient in XRD, UV-VIS, FTIR, AAS, and PSA material characterization</p>
+            </div>
+            <div class="expertise-card">
+                <div class="expertise-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Research Methodologies</h3>
+                <p>Comprehensive understanding of research domains and scientific methods</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Experience -->
+    <section id="volunteer">
+        <h2 class="section-title">Volunteer Experience</h2>
+        <div class="volunteer-card">
+            <h3><i class="fas fa-handshake"></i> Job Fair 2023 - Wayamba University of Sri Lanka</h3>
+            <p>
+                Supported event logistics, directed attendees, assisted employers, and ensured effective communication 
+                throughout the job fair. Played a key role in the smooth execution of the event, enhancing the experience 
+                for both students and recruiters. Strengthened communication, teamwork, event coordination, and 
+                problem-solving abilities in a professional setting.
+            </p>
+        </div>
+    </section>
+
+    <!-- Memberships -->
+    <section id="memberships">
+        <h2 class="section-title">Memberships</h2>
+        <div class="membership-list">
+            <div class="membership-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <strong>YSF Nastec</strong>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">2023 - Present</p>
+                </div>
+            </div>
+            <div class="membership-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <strong>Waya Nanoclub - WUSL</strong>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">2022 - Present</p>
+                </div>
+            </div>
+            <div class="membership-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <strong>Waya Explorers - WUSL</strong>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">2023 - Present</p>
+                </div>
+            </div>
+            <div class="membership-item">
+                <i class="fas fa-users"></i>
+                <div>
+                    <strong>Waya Rotaractors - WUSL</strong>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">2023 - Present</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+        <h2 class="section-title">Certifications & Awards</h2>
+        <div class="certifications-list">
+            <div class="certification-item">
+                <i class="fas fa-trophy"></i>
+                <div>
+                    <strong>Sri Lanka Universities Sports Association (SLUSA) Awards</strong>
+                    <p style="color: var(--text-secondary);">2023</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <i class="fas fa-award"></i>
+                <div>
+                    <strong>Wayamba University of Sri Lanka - Award of Colours Insignia</strong>
+                    <p style="color: var(--text-secondary);">2023</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <i class="fas fa-medal"></i>
+                <div>
+                    <strong>Inter Faculty Championship - Wayamba University of Sri Lanka</strong>
+                    <p style="color: var(--text-secondary);">2022</p>
+                </div>
+            </div>
+            <div class="certification-item">
+                <i class="fas fa-medal"></i>
+                <div>
+                    <strong>Ministry of Education All Island School Games - Wrestling</strong>
+                    <p style="color: var(--text-secondary);">2019</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-secondary);">
+                I'm currently seeking opportunities in research or industrial environments. 
+                Let's work together!
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:reeforringston@gmail.com">reeforringston@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <a href="tel:+94765793373">+94 76 579 3373</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>165B, Mainstreet, Kalmunai<br>Ampara 32300, Sri Lanka</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-user"></i>
+                    <h3>Social</h3>
+                    <a href="#">Orringston</a>
+                </div>
+            </div>
+
+            <div class="contact-buttons">
+                <a href="mailto:reeforringston@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Email
+                </a>
+                <a href="https://wa.me/94765793373" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+                <a href="cv (1).pdf" download class="btn btn-secondary">
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="mailto:reeforringston@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+94765793373"><i class="fas fa-phone"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+        <p>&copy; 2026 Orringston Andrado. All Rights Reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            Materials & Nano Science  Engineer Technology 
+        </p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+            } else {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.project-card, .education-item, .skill-category, .expertise-card, .contact-item, .training-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
